@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://192.168.110.132:8848
+        namespace: a4a5aeb8-46d8-4c42-b119-60647da53d37
+        group: dev
