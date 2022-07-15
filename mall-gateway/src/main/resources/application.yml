@@ -38,6 +38,12 @@ spring:
             - Path=/mall-demo/**
           filters:
             - StripPrefix=1
+        - id: mall-gateway
+            uri: lb://mall-gateway
+            predicates:
+              - Path=/mall-gateway/**
+            filters:
+              - StripPrefix=1
   security:
     oauth2:
       resourceserver:
