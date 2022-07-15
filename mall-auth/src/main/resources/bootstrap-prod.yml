@@ -2,10 +2,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: http://nacos-registry:8848
+        server-addr: http://nacos:8848
+        namespace: 8bfabb68-1e71-42f0-a2d5-da6993abf241
+        group: prod
       config:
-        server-addr: http://nacos-registry:8848
+        server-addr: http://nacos:8848
         file-extension: yaml
-logging:
-  level:
-    root: info
