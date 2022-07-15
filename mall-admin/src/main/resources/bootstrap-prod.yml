@@ -5,7 +5,6 @@ spring:
         server-addr: http://nacos:8848
         namespace: 8bfabb68-1e71-42f0-a2d5-da6993abf241
         group: prod
-        ip: 192.168.110.132
       config:
         server-addr: http://nacos:8848
         file-extension: yaml
