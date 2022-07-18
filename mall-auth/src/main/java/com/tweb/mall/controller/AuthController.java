@@ -31,6 +31,9 @@ public class AuthController {
     @Autowired
     private TokenEndpoint tokenEndpoint;
 
+    /*
+    Oauth2登录认证
+     */
     @ApiOperation("Oauth2获取token")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "grant_type", value = "授权模式", required = true),
@@ -42,7 +45,7 @@ public class AuthController {
     })
     @PostMapping("/token")
     public CommonResult<Oauth2TokenDto> postAccessToken(@ApiIgnore Principal principal, @ApiIgnore @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
-        OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
+        OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();  // 生成token令牌
         Oauth2TokenDto oauth2TokenDto = Oauth2TokenDto.builder()
                 .token(oAuth2AccessToken.getValue())
                 .refreshToken(oAuth2AccessToken.getRefreshToken().getValue())
